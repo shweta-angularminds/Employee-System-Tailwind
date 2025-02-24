@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+.error {
+  color: rgb(255, 93, 93);
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.pagination-container .disabled a {
+  text-decoration: none;
+  color: grey;
+}
+a {
+  color: #d8d8d8;
+}
+.pagination .pagination-container li a {
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.pagination .pagination-container li {
+  margin: 0 2px;
+  padding: 0.1rem 0.6rem;
+  text-align: center;
+  border:1px solid rgb(105, 105, 105);
+}
+
+.pagination-container button {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 6px 13px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  color: #353638;
+}
+
+.pagination-container button:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+  color: #fffafa;
+}
+
+.active-page {
+  background-color: #f4faff;
+  color: rgb(59, 59, 59);
+  padding: 0.1rem 0.3rem;
+  /* border-radius: 50%; */
+}
+.active-page a {
+  color: #4e4e4e;
+}
+.active-page button {
+  color: rgb(49, 49, 49);
+  font-weight: bold;
+}
+
+.pagination-container button:hover:not(:disabled) {
+  background-color: #f0f0f0;
+}
