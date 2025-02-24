@@ -75,7 +75,7 @@ const Dashboard = () => {
   };
 
   return (
-    <>
+    <div className="w-full h-100">
       <Header />
       <div className="bg-white dark:bg-gray-800 dark:text-gray-100 flex justify-center items-center px-3 py-2">
         <div className="flex grow ">
@@ -83,7 +83,7 @@ const Dashboard = () => {
             type="text"
             name="search"
             value={search}
-            className="grow  bg-gray-100 text-gray-900 py-2.5 px-2 rounded-lg mx-1 border-0  outline-0"
+            className="grow text-sm bg-gray-100 text-gray-800 py-2 px-2 rounded-lg mx-1 border-0  outline-0"
             onChange={handleSearchChange}
             placeholder="Search for an employee or department..."
           />
@@ -91,11 +91,12 @@ const Dashboard = () => {
         <div className="">
           <button
             onClick={handleAddEmployee}
-            className="bg-indigo-700 text-white px-3 py-2 rounded-md font-medium text-md"
+            className="bg-indigo-700 text-white px-3 py-2 rounded-md font-medium text-sm"
           >
             Add employee
           </button>
         </div>
+        
       </div>
 
       {employees.length > 0 ? (
@@ -141,13 +142,15 @@ const Dashboard = () => {
           <p>No employees found.</p>
         </div>
       )}
-      <EmployeeForm
-        showModal={showModal}
-        setShowModal={setShowModal}
-        employeeData={selectedEmployee}
-        refreshData={refreshData}
-      />
-    </>
+      <div className="">
+        <EmployeeForm
+          showModal={showModal}
+          setShowModal={setShowModal}
+          employeeData={selectedEmployee}
+          refreshData={refreshData}
+        />
+      </div>
+    </div>
   );
 };
 

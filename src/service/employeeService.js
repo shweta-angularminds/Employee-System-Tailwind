@@ -9,14 +9,20 @@ const deleteEmployee = async (id) => {
 };
 const addEmployee = async (formData) => {
   try {
-    await axiosInstance.post("/employee/add", formData);
+    await axiosInstance.post("/employee/add", formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data', 
+      }});
   } catch (error) {
     throw error;
   }
 };
 const updateEmployee = async (id, formData) => {
   try {
-    await axiosInstance.put(`/employee/update/${id}`, formData);
+    await axiosInstance.put(`/employee/update/${id}`, formData ,{
+      headers: {
+        'Content-Type': 'multipart/form-data', 
+      }});
   } catch (error) {
     throw error;
   }
