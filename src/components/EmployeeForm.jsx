@@ -47,7 +47,6 @@ const EmployeeForm = ({
       setEmail(employeeData.email);
       setWorkType(employeeData.workType);
       setGender(employeeData.gender);
-
       setAvatar(employeeData?.avatar);
     }
   }, [showModal, employeeData]);
@@ -101,6 +100,12 @@ const EmployeeForm = ({
       isValid = false;
     } else {
       formErrors.salary = "";
+    }
+    if(!gender){
+      formErrors.gender = "Gender is required.";
+      isValid=false;
+    }else{
+      formErrors.gender = "";
     }
 
     setErrors(formErrors);
@@ -343,11 +348,7 @@ const EmployeeForm = ({
                       id="avatar"
                       onChange={(e) => setAvatar(e.target.files[0])}
                     />
-                    {/* {errors.designation && (
-                      <div className="text-red-500 text-sm">
-                        {errors.designation}
-                      </div>
-                    )} */}
+                    
                   </div>
                 </div>
                 <div className="flex flex-wrap -mx-2">
@@ -402,6 +403,7 @@ const EmployeeForm = ({
                           className="me-2"
                           checked={workType.includes("remote")}
                           onChange={handleWorkTypeChange}
+               
                         />
                         Remote
                       </label>
@@ -412,6 +414,7 @@ const EmployeeForm = ({
                           className="me-2"
                           checked={workType.includes("on-duty")}
                           onChange={handleWorkTypeChange}
+                    
                         />
                         On Duty
                       </label>
@@ -422,6 +425,7 @@ const EmployeeForm = ({
                           className="me-2"
                           checked={workType.includes("in-office")}
                           onChange={handleWorkTypeChange}
+                          
                         />
                         In office
                       </label>

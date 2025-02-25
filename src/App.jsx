@@ -10,6 +10,8 @@ import {
 } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
 import PrivateRoute from "./api/PrivateRoute";
+import { ThemeProvider } from "./utils/ThemeContext";
+
 function App() {
   const isAuthenticated = () => {
     const token = localStorage.getItem("token");
@@ -17,43 +19,41 @@ function App() {
   };
 
   return (
-    <div>
-      <Router>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              isAuthenticated() ? <Navigate to="/dashboard" /> : <Login />
-            }
-          />
-          <Route
-            path="/register"
-            element={
-              isAuthenticated() ? (
-                <Navigate to="/dashboard" />
-              ) : (
-                <Register />
-              )
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              isAuthenticated() ? <Navigate to="/dashboard" /> : <Login />
-            }
-          />
-          {/* Protected routes */}
-          <Route
-            path="/dashboard"
-            element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <Dashboard />
-              </PrivateRoute>
-            }
-          />
-        </Routes>
-      </Router>
-    </div>
+    <ThemeProvider>
+      <div>
+        <Router>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                isAuthenticated() ? <Navigate to="/dashboard" /> : <Login />
+              }
+            />
+            <Route
+              path="/register"
+              element={
+                isAuthenticated() ? <Navigate to="/dashboard" /> : <Register />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                isAuthenticated() ? <Navigate to="/dashboard" /> : <Login />
+              }
+            />
+            {/* Protected routes */}
+            <Route
+              path="/dashboard"
+              element={
+                <PrivateRoute isAuthenticated={isAuthenticated}>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
+          </Routes>
+        </Router>
+      </div>
+    </ThemeProvider>
   );
 }
 

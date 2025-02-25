@@ -29,14 +29,14 @@ const EmployeeTable = ({ employees, onSort, refreshData, onEdit }) => {
 
   return (
     <>
-      <div class="relative overflow-x-auto shadow-md  ">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <div className="relative overflow-x-auto shadow-md  ">
+        <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-800 dark:text-gray-400">
             <tr>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Profile
               </th>
-              <th scope="col" class="px-6 py-3 flex items-center">
+              <th scope="col" className="px-6 py-3 flex items-center">
                 Employee Name
                 <span className="ms-2 flex flex-col ">
                   <i
@@ -49,16 +49,16 @@ const EmployeeTable = ({ employees, onSort, refreshData, onEdit }) => {
                   ></i>
                 </span>
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Designation
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Department
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Email
               </th>
-              <th scope="col" class="px-6 py-3 flex items-center">
+              <th scope="col" className="px-6 py-3 flex items-center">
                 Salary
                 <span className="ms-2 flex flex-col ">
                   <i
@@ -71,17 +71,17 @@ const EmployeeTable = ({ employees, onSort, refreshData, onEdit }) => {
                   ></i>
                 </span>
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Gender
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Work Type
               </th>
-              <th scope="col" class="px-6 py-3">
+              <th scope="col" className="px-6 py-3">
                 Handle
               </th>
-              {/* <th scope="col" class="px-6 py-3">
-                <span class="sr-only">Edit</span>
+              {/* <th scope="col" className="px-6 py-3">
+                <span className="sr-only">Edit</span>
               </th> */}
             </tr>
           </thead>
@@ -89,26 +89,26 @@ const EmployeeTable = ({ employees, onSort, refreshData, onEdit }) => {
             {employees.map((employee, index) => (
               <tr
                 key={employee._id}
-                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
+                className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-600"
               >
-                <td class="capitalize px-6 py-4 profile">
+                <td className="capitalize px-6 py-4 profile">
                   <img src={employee?.avatar}></img>
                 </td>
                 <th
                   scope="row"
-                  class="capitalize px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                  className="capitalize px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
                   {employee.employee_name}
                 </th>
-                <td class="capitalize px-6 py-4">{employee.designation}</td>
-                <td class="capitalize px-6 py-4">{employee.department}</td>
-                <td class="px-6 py-4">{employee.email}</td>
-                <td class="px-6 py-4">&#8377; {employee.salary}</td>
-                <td class=" capitalize px-6 py-4">{employee?.gender}</td>
-                <td class="capitalize px-6 py-4">
+                <td className="capitalize px-6 py-4">{employee.designation}</td>
+                <td className="capitalize px-6 py-4">{employee.department}</td>
+                <td className="px-6 py-4">{employee.email}</td>
+                <td className="px-6 py-4">&#8377; {employee.salary}</td>
+                <td className=" capitalize px-6 py-4">{employee?.gender}</td>
+                <td className="capitalize px-6 py-4">
                   {(employee?.workType).join(", ")}
                 </td>
-                <td class="px-6 py-4 ">
+                <td className="px-6 py-4 ">
                   <button className="me-3" onClick={() => onEdit(employee)}>
                     <i className="fa-solid fa-pen"></i>
                   </button>

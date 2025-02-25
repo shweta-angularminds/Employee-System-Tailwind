@@ -110,7 +110,7 @@ const Dashboard = () => {
 
           <div className="pagination flex justify-center py-4 bg-gray-50 dark:bg-gray-800">
             <div className="dropdown bg-custom me-4 ms-3">
-              <label className="me-2 dark:text-white font-normal text-sm  ">
+              <label className="me-2 dark:text-white text-gray-800 font-normal text-sm  ">
                 Data per page
               </label>
               <select
@@ -139,7 +139,7 @@ const Dashboard = () => {
         </div>
       ) : (
         <div className="no-content">
-          <p>No employees found.</p>
+          <p className="text-gray-800 dark:text-white text-center text-xl mt-3">No Employees Found.</p>
         </div>
       )}
       <div className="">

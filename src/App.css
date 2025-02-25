@@ -1,9 +1,8 @@
-@import "tailwindcss";
-.profile{
-  img{
-    width:4rem;
-    height:4rem;
-    
+.profile {
+  img {
+    width: 4rem;
+    height: 4rem;
+
     object-fit: contain;
   }
 }
@@ -24,7 +23,7 @@
   color: grey;
 }
 a {
-  color: #d8d8d8;
+  color: #313131;
 }
 .pagination .pagination-container li a {
   text-decoration: none;
@@ -35,7 +34,7 @@ a {
   margin: 0 2px;
   padding: 0.1rem 0.6rem;
   text-align: center;
-  border:1px solid rgb(105, 105, 105);
+  border: 1px solid rgb(105, 105, 105);
 }
 
 .pagination-container button {
@@ -53,18 +52,39 @@ a {
   cursor: not-allowed;
   color: #fffafa;
 }
+.dark {
+  .active-page {
+    background-color: #f4faff;
+    color: rgb(59, 59, 59);
+    padding: 0.1rem 0.3rem;
+    /* border-radius: 50%; */
+  }
 
+  .active-page a {
+    color: #4e4e4e;
+  }
+
+  .active-page button {
+    color: rgb(49, 49, 49);
+    font-weight: bold;
+  }
+  a {
+  color: #d8d8d8;
+}
+}
 .active-page {
-  background-color: #f4faff;
-  color: rgb(59, 59, 59);
+  background-color: #555555;
+  color: rgb(65, 62, 62);
   padding: 0.1rem 0.3rem;
   /* border-radius: 50%; */
 }
+
 .active-page a {
-  color: #4e4e4e;
+  color: #ffffff;
 }
+
 .active-page button {
-  color: rgb(49, 49, 49);
+  color: rgb(41, 35, 35);
   font-weight: bold;
 }
 

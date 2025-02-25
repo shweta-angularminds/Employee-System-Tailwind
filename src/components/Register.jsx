@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import { showToast } from "../service/notify";
 import { registerUser } from "../service/authService";
-import ThemeToggle from "./ThemeToggle";
+
 const Register = () => {
   const [formData, setFormData] = useState({
     username: "",
